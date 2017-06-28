@@ -5,9 +5,9 @@ from fabric.operations import sudo
 
 GIT_REPO = 'git@github.com:shanyongxu/blog.git'
 
-env.user = 'root'
+env.user = '不能让你们知道我的用户名'
 
-env.password = '!@#5841314521lkh'
+env.password = '不能让你们知道我的密码'
 
 env.hosts = ['www.syx666.com']
 
