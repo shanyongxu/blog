@@ -27,6 +27,7 @@ class Post(models.Model):
 
     author = models.ForeignKey(User)
 
+    views = models.PositiveIntegerField(default=0)
     def __str__(self):
         return self.title
     
@@ -35,6 +36,10 @@ class Post(models.Model):
     
     class Meta:
         ordering = ['-create_time']
+
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])
 
 
 
