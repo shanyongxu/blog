@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load blog_tags %}
 {% block main %}
     {% for post in post_list %}
         <article class="post post-{{ post.pk }}">
@@ -42,3 +42,18 @@
 {% endif %}
 
 {% endblock main %}
+
+{% block tag %}
+
+  {% get_tags as tag_list %}
+  <ul>
+    {% for tag in tag_list %}
+    <li>
+    <a href="{% url 'blog:tag' tag.pk %}">{{ tag.name }}</a>
+    </li>
+    {% empty %}
+    暂无标签！
+    {% endfor %}
+  </ul>
+
+{% endblock tag%}
