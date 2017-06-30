@@ -5,9 +5,9 @@ from fabric.operations import sudo
 
 GIT_REPO = 'git@github.com:shanyongxu/blog.git'
 
-env.user = '账号不能说'
+env.user = '**********'
 
-env.password = '密码不能说'
+env.password = '******'
 
 env.hosts = ['www.syx666.com']
 
@@ -22,8 +22,7 @@ def deploy():
         ../env/bin/pip install -r requirements.txt &&
         ../env/bin/python3.4 manage.py collectstatic --noinput &&
         ../env/bin/python3.4 manage.py makemigrations &&
-        ../env/bin/python3.4 manage.py migrate &&
-        ../env/bin/python3.4 manage.py rebuild_index
+        ../env/bin/python3.4 manage.py migrate 
         """.format(source_folder))
     run('restart gunicorn-www.syx666.com')
     run('service nginx restart')

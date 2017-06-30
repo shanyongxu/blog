@@ -14,8 +14,8 @@
                         <a href="{% url 'blog:category' result.object.category.pk %}">
                             {{ result.object.category.name }}</a></span>
                         <span class="post-date"><a href="#">
-                            <time class="entry-date" datetime="{{ result.object.created_time }}">
-                                {{ result.object.created_time }}</time></a></span>
+                            <time class="entry-date" datetime="{{ result.object.create_time }}">
+                                {{ result.object.create_time }}</time></a></span>
                         <span class="post-author"><a href="#">{{ result.object.author }}</a></span>
                         <span class="comments-link">
                         <a href="{{ result.object.get_absolute_url }}#comment-area">
